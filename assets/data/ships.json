@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "ships": [
+    {
+      "id": "scout",
+      "name": "Scout",
+      "description": "Light, fast reconnaissance vessel. Affordable starter ship.",
+      "price": 2000,
+      "baseCargo": 20,
+      "cargoUpgradeBonus": 0,
+      "baseWeapons": 1,
+      "weaponUpgradeBonus": 0,
+      "cargoUpgradeCost": 800,
+      "weaponUpgradeCost": 1000,
+      "sellValueRatio": 0.8,
+      "repairCostRatio": 0.10,
+      "speed": 1.0,
+      "sprite": "scout"
+    },
+    {
+      "id": "freighter",
+      "name": "Freighter",
+      "description": "Bulk hauler. Massive cargo, light defenses.",
+      "price": 8000,
+      "baseCargo": 20,
+      "cargoUpgradeBonus": 15,
+      "baseWeapons": 1,
+      "weaponUpgradeBonus": 0,
+      "cargoUpgradeCost": 600,
+      "weaponUpgradeCost": 1500,
+      "sellValueRatio": 0.8,
+      "repairCostRatio": 0.10,
+      "speed": 0.7,
+      "sprite": "freighter"
+    },
+    {
+      "id": "cruiser",
+      "name": "Cruiser",
+      "description": "Balanced combat-trader. Good cargo, solid weapons.",
+      "price": 18000,
+      "baseCargo": 20,
+      "cargoUpgradeBonus": 10,
+      "baseWeapons": 3,
+      "weaponUpgradeBonus": 0,
+      "cargoUpgradeCost": 1000,
+      "weaponUpgradeCost": 1200,
+      "sellValueRatio": 0.8,
+      "repairCostRatio": 0.10,
+      "speed": 0.9,
+      "sprite": "cruiser"
+    },
+    {
+      "id": "dreadnought",
+      "name": "Dreadnought",
+      "description": "Warship. Maximum cargo and devastating firepower.",
+      "price": 45000,
+      "baseCargo": 20,
+      "cargoUpgradeBonus": 20,
+      "baseWeapons": 5,
+      "weaponUpgradeBonus": 0,
+      "cargoUpgradeCost": 1500,
+      "weaponUpgradeCost": 2000,
+      "sellValueRatio": 0.8,
+      "repairCostRatio": 0.10,
+      "speed": 0.6,
+      "sprite": "dreadnought"
+    }
+  ]
+}
