@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "commodities": [
+    {
+      "id": "food",
+      "name": "Food",
+      "icon": "food",
+      "basePrice": 50,
+      "category": "essential",
+      "description": "Essential everywhere. Agricultural worlds produce surplus.",
+      "volatility": 0.15
+    },
+    {
+      "id": "water",
+      "name": "Water",
+      "icon": "water",
+      "basePrice": 30,
+      "category": "essential",
+      "description": "Cheap at gas giants, precious on arid worlds.",
+      "volatility": 0.20
+    },
+    {
+      "id": "fuel",
+      "name": "Fuel",
+      "icon": "fuel",
+      "basePrice": 100,
+      "category": "industrial",
+      "description": "Industrial need. Refined from gas giant atmospheres.",
+      "volatility": 0.18
+    },
+    {
+      "id": "ore",
+      "name": "Ore",
+      "icon": "ore",
+      "basePrice": 80,
+      "category": "industrial",
+      "description": "Mining world specialty. Raw material for construction.",
+      "volatility": 0.15
+    },
+    {
+      "id": "electronics",
+      "name": "Electronics",
+      "icon": "electronics",
+      "basePrice": 500,
+      "category": "tech",
+      "description": "High value. Manufactured goods.",
+      "volatility": 0.25
+    },
+    {
+      "id": "medicine",
+      "name": "Medicine",
+      "icon": "medicine",
+      "basePrice": 300,
+      "category": "tech",
+      "description": "Always in demand. Critical for colony health.",
+      "volatility": 0.20
+    },
+    {
+      "id": "luxury",
+      "name": "Luxury Goods",
+      "icon": "luxury",
+      "basePrice": 800,
+      "category": "luxury",
+      "description": "High-end consumer goods. Venus specialty.",
+      "volatility": 0.30
+    },
+    {
+      "id": "tech",
+      "name": "Tech Parts",
+      "icon": "tech",
+      "basePrice": 400,
+      "category": "tech",
+      "description": "Neptune specialty. Cutting-edge components.",
+      "volatility": 0.25
+    },
+    {
+      "id": "contraband",
+      "name": "Contraband",
+      "icon": "contraband",
+      "basePrice": 2000,
+      "category": "illegal",
+      "description": "Illegal goods. High reward, high risk.",
+      "volatility": 0.40,
+      "illegal": true
+    }
+  ]
+}

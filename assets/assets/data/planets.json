@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "planets": [
+    {
+      "id": "terra",
+      "name": "Terra",
+      "description": "Humanity's birthplace. Balanced economy, strict laws.",
+      "color": {"r": 70, "g": 130, "b": 220},
+      "accentColor": {"r": 30, "g": 80, "b": 160},
+      "ringColor": null,
+      "size": 1.0,
+      "governmentType": "federal_democracy",
+      "lawLevel": "strict",
+      "taxRate": 0.08,
+      "specialties": ["electronics", "medicine"],
+      "basePrices": {
+        "food": 50, "water": 40, "fuel": 110, "ore": 90,
+        "electronics": 480, "medicine": 280, "luxury": 850, "tech": 420, "contraband": 2400
+      },
+      "travelCost": 50,
+      "bankName": "First Galactic Bank",
+      "governorName": "Admiral Sarah Chen",
+      "shipyardTier": 3
+    },
+    {
+      "id": "mars",
+      "name": "Mars",
+      "description": "Industrial powerhouse. High prices, high demand.",
+      "color": {"r": 200, "g": 80, "b": 50},
+      "accentColor": {"r": 140, "g": 40, "b": 20},
+      "ringColor": null,
+      "size": 0.8,
+      "governmentType": "corporate_council",
+      "lawLevel": "moderate",
+      "taxRate": 0.10,
+      "specialties": ["luxury", "electronics"],
+      "basePrices": {
+        "food": 65, "water": 45, "fuel": 120, "ore": 100,
+        "electronics": 580, "medicine": 320, "luxury": 1100, "tech": 480, "contraband": 2600
+      },
+      "travelCost": 50,
+      "bankName": "Mars Industrial Credit Union",
+      "governorName": "Director Viktor Kozlov",
+      "shipyardTier": 3
+    },
+    {
+      "id": "jupiter",
+      "name": "Jupiter",
+      "description": "Gas giant. Fuel refineries, water mining stations.",
+      "color": {"r": 220, "g": 160, "b": 80},
+      "accentColor": {"r": 160, "g": 100, "b": 40},
+      "ringColor": null,
+      "size": 2.5,
+      "governmentType": "mining_consortium",
+      "lawLevel": "moderate",
+      "taxRate": 0.05,
+      "specialties": ["water", "fuel", "food"],
+      "basePrices": {
+        "food": 95, "water": 15, "fuel": 25, "ore": 60,
+        "electronics": 680, "medicine": 480, "luxury": 950, "tech": 520, "contraband": 2200
+      },
+      "travelCost": 75,
+      "bankName": "Jupiter Mining Credit",
+      "governorName": "Foreman Diego Reyes",
+      "shipyardTier": 2
+    },
+    {
+      "id": "saturn",
+      "name": "Saturn",
+      "description": "Agricultural paradise. Cheap food, beautiful rings.",
+      "color": {"r": 230, "g": 200, "b": 120},
+      "accentColor": {"r": 180, "g": 150, "b": 70},
+      "ringColor": {"r": 200, "g": 180, "b": 100},
+      "size": 2.2,
+      "governmentType": "agrarian_republic",
+      "lawLevel": "lenient",
+      "taxRate": 0.04,
+      "specialties": ["food", "water"],
+      "basePrices": {
+        "food": 20, "water": 18, "fuel": 90, "ore": 70,
+        "electronics": 650, "medicine": 350, "luxury": 780, "tech": 580, "contraband": 1800
+      },
+      "travelCost": 80,
+      "bankName": "Saturn Harvest Bank",
+      "governorName": "Elder Maya Okafor",
+      "shipyardTier": 1
+    },
+    {
+      "id": "venus",
+      "name": "Venus",
+      "description": "Luxury colony. Floating cities, high fashion.",
+      "color": {"r": 240, "g": 200, "b": 100},
+      "accentColor": {"r": 200, "g": 140, "b": 50},
+      "ringColor": null,
+      "size": 0.9,
+      "governmentType": "plutocratic_council",
+      "lawLevel": "moderate",
+      "taxRate": 0.12,
+      "specialties": ["luxury"],
+      "basePrices": {
+        "food": 60, "water": 50, "fuel": 100, "ore": 85,
+        "electronics": 520, "medicine": 310, "luxury": 350, "tech": 450, "contraband": 2300
+      },
+      "travelCost": 55,
+      "bankName": "Venus Noble Treasury",
+      "governorName": "Madame Isabella Rossi",
+      "shipyardTier": 2
+    },
+    {
+      "id": "mercury",
+      "name": "Mercury",
+      "description": "Solar mining outpost. Extreme conditions, high ore yield.",
+      "color": {"r": 180, "g": 140, "b": 100},
+      "accentColor": {"r": 120, "g": 80, "b": 40},
+      "ringColor": null,
+      "size": 0.5,
+      "governmentType": "mining_corporation",
+      "lawLevel": "lenient",
+      "taxRate": 0.03,
+      "specialties": ["ore", "fuel"],
+      "basePrices": {
+        "food": 80, "water": 60, "fuel": 40, "ore": 25,
+        "electronics": 600, "medicine": 400, "luxury": 900, "tech": 500, "contraband": 2000
+      },
+      "travelCost": 45,
+      "bankName": "Sol Mining Co-op",
+      "governorName": "Chief Engineer Raj Patel",
+      "shipyardTier": 1
+    },
+    {
+      "id": "neptune",
+      "name": "Neptune",
+      "description": "Tech research hub. Cutting-edge, deep blue mystery.",
+      "color": {"r": 60, "g": 100, "b": 200},
+      "accentColor": {"r": 30, "g": 50, "b": 140},
+      "ringColor": null,
+      "size": 1.8,
+      "governmentType": "research_directorate",
+      "lawLevel": "strict",
+      "taxRate": 0.09,
+      "specialties": ["electronics", "tech"],
+      "basePrices": {
+        "food": 70, "water": 48, "fuel": 130, "ore": 95,
+        "electronics": 120, "medicine": 290, "luxury": 880, "tech": 120, "contraband": 2100
+      },
+      "travelCost": 90,
+      "bankName": "Neptune Research Federal",
+      "governorName": "Dr. Yuki Tanaka",
+      "shipyardTier": 3
+    },
+    {
+      "id": "io",
+      "name": "Io Station",
+      "description": "Frontier outpost. Lawless, profitable. Volcanic.",
+      "color": {"r": 220, "g": 100, "b": 50},
+      "accentColor": {"r": 180, "g": 60, "b": 20},
+      "ringColor": null,
+      "size": 0.4,
+      "governmentType": "frontier_anarchy",
+      "lawLevel": "lawless",
+      "taxRate": 0.00,
+      "specialties": ["contraband", "ore"],
+      "basePrices": {
+        "food": 90, "water": 70, "fuel": 115, "ore": 30,
+        "electronics": 550, "medicine": 450, "luxury": 820, "tech": 460, "contraband": 1500
+      },
+      "travelCost": 60,
+      "bankName": "No Official Bank",
+      "governorName": "Captain Zeke 'No-Laws' Morrison",
+      "shipyardTier": 1
+    },
+    {
+      "id": "titan",
+      "name": "Titan",
+      "description": "Methane seas, hydrocarbon industry. Cold, dark, rich.",
+      "color": {"r": 180, "g": 130, "b": 80},
+      "accentColor": {"r": 120, "g": 80, "b": 40},
+      "ringColor": {"r": 140, "g": 100, "b": 60},
+      "size": 0.7,
+      "governmentType": "industrial_cartel",
+      "lawLevel": "moderate",
+      "taxRate": 0.07,
+      "specialties": ["fuel", "medicine"],
+      "basePrices": {
+        "food": 75, "water": 55, "fuel": 30, "ore": 50,
+        "electronics": 570, "medicine": 200, "luxury": 870, "tech": 440, "contraband": 1900
+      },
+      "travelCost": 85,
+      "bankName": "Titan Hydrocarbon Trust",
+      "governorName": "Baron Klaus Weber",
+      "shipyardTier": 2
+    }
+  ]
+}
