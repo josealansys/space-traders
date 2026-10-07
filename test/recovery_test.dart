@@ -140,7 +140,7 @@ void main() {
       expect(result.success, false);
     });
 
-    test('13. recoverPassword() returns the email on file', () async {
+    test('13. recoverPassword() returns the email on file (NOT the password)', () async {
       final auth = AuthService();
       await auth.register(
         username: 'cap', email: 'a@x.com', password: 'secret123',
@@ -148,8 +148,25 @@ void main() {
       final result = await auth.recoverPassword(username: 'cap');
       expect(result.success, true);
       expect(result.email, 'a@x.com');
-      // recoverPassword cannot return the original (it's hashed)
-      expect(result.recoveredPassword, isNull);
+      // CRITICAL: password is NEVER returned to the client
+    });
+
+    test('14. recoverPassword() queues a pending request for backend', () async {
+      final auth = AuthService();
+      await auth.register(
+        username: 'cap', email: 'a@x.com', password: 'secret123',
+      );
+      final result = await auth.recoverPassword(username: 'cap');
+      expect(result.success, true);
+      final pending = await auth.getPendingRecovery();
+      expect(pending, isNotNull);
+      expect(pending!.username, 'cap');
+      expect(pending.email, 'a@x.com');
+      // Backend (server-side only) can decrypt
+      final decrypted = await auth.decryptPasswordForBackend('cap');
+      expect(decrypted, 'secret123');
+      await auth.clearPendingRecovery();
+      expect(await auth.getPendingRecovery(), isNull);
     });
   });
 }
