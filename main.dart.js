@@ -28932,7 +28932,7 @@ aVt(a,b,c){var s=0,r=A.S(t.PJ),q,p=2,o=[],n,m,l,k,j
 var $async$a8B=A.T(function(d,e){if(d===1){o.push(e)
 s=p}for(;;)switch(s){case 0:p=4
 s=7
-return A.H(A.aEG("https://violet-areas-relate.loca.lt/send",A.as(["to",b,"username",c],t.N,t.z)),$async$a8B)
+return A.H(A.aEG("https://southern-care-coordinated-nick.trycloudflare.com/send",A.as(["to",b,"username",c],t.N,t.z)),$async$a8B)
 case 7:n=e
 if(J.d(J.aS(n,"success"),!0)){q=new A.yj(null,b,!0)
 s=1
