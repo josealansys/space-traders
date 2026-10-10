@@ -1,0 +1,3 @@
+# Space Traders Cloud Backend
+# Uses only Python standard library - no external deps needed
+# This file exists because Render requires it for pip install
