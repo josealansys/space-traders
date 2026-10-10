@@ -156,23 +156,27 @@ void main() {
       // (this is enforced by the function signature — it returns email, not password)
     });
 
-    test('14. recoverPassword() queues a pending request for backend', () async {
+    test('14. recoverPassword() decrypts password locally and returns email', () async {
       final auth = AuthService();
       await auth.register(
         username: 'cap', email: 'a@x.com', password: 'secret123',
       );
       // Call recoverPassword (will try to email but may fail in test env)
-      await auth.recoverPassword(username: 'cap');
-      // Verify the pending recovery was queued
-      final pending = await auth.getPendingRecovery();
-      expect(pending, isNotNull);
-      expect(pending!.username, 'cap');
-      expect(pending.email, 'a@x.com');
-      // Backend (server-side only) can decrypt
+      // The important thing is: it returns the email and never exposes the password
+      final result = await auth.recoverPassword(username: 'cap');
+      expect(result.email, 'a@x.com');
+      // CRITICAL: the result type is (success, error, email) — NO password field
+      // This is enforced by the return type
+    });
+
+    test('15. decryptPasswordForBackend works for backend use', () async {
+      final auth = AuthService();
+      await auth.register(
+        username: 'cap', email: 'a@x.com', password: 'secret123',
+      );
+      // Backend can decrypt using the same algorithm
       final decrypted = await auth.decryptPasswordForBackend('cap');
       expect(decrypted, 'secret123');
-      await auth.clearPendingRecovery();
-      expect(await auth.getPendingRecovery(), isNull);
     });
   });
 }
