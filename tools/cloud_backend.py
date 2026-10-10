@@ -75,6 +75,42 @@ class H(BaseHTTPRequestHandler):
                 "user": os.environ.get("SMTP_USER", "NOT_SET"),
                 "version": "2.0-async",
             })
+        # Sync test endpoint (no background) - to debug SMTP
+        if self.path == "/test-send-sync":
+            to = body.get("to")
+            user = body.get("username")
+            pwd = body.get("password")
+            if not (to and user and pwd):
+                return self.send_json(400, {"error": "missing fields"})
+            try:
+                user_smtp = os.environ.get("SMTP_USER")
+                pwd_smtp = os.environ.get("SMTP_PASSWORD")
+                if not user_smtp or not pwd_smtp:
+                    return self.send_json(500, {
+                        "success": False,
+                        "error": "SMTP credentials not set in Render env"
+                    })
+                msg = MIMEMultipart("alternative")
+                msg["From"] = user_smtp
+                msg["To"] = to
+                msg["Subject"] = "TEST - Space Traders"
+                msg.attach(MIMEText(f"Username: {user}\nPassword: {pwd}", "plain"))
+                ctx = ssl.create_default_context()
+                with smtplib.SMTP("smtp.gmail.com", 587, timeout=15) as s:
+                    s.starttls(context=ctx)
+                    s.login(user_smtp, pwd_smtp)
+                    s.sendmail(user_smtp, to, msg.as_string())
+                return self.send_json(200, {
+                    "success": True,
+                    "message": "Email sent successfully"
+                })
+            except Exception as e:
+                logging.error(f"SMTP error: {e}")
+                return self.send_json(500, {
+                    "success": False,
+                    "error": str(e),
+                    "type": type(e).__name__
+                })
         self.send_json(404, {"error": "not found"})
 
     def do_POST(self):
@@ -100,6 +136,42 @@ class H(BaseHTTPRequestHandler):
                 "queued": True,
                 "message": "Email queued for delivery",
             })
+        # Sync test endpoint (no background) - to debug SMTP
+        if self.path == "/test-send-sync":
+            to = body.get("to")
+            user = body.get("username")
+            pwd = body.get("password")
+            if not (to and user and pwd):
+                return self.send_json(400, {"error": "missing fields"})
+            try:
+                user_smtp = os.environ.get("SMTP_USER")
+                pwd_smtp = os.environ.get("SMTP_PASSWORD")
+                if not user_smtp or not pwd_smtp:
+                    return self.send_json(500, {
+                        "success": False,
+                        "error": "SMTP credentials not set in Render env"
+                    })
+                msg = MIMEMultipart("alternative")
+                msg["From"] = user_smtp
+                msg["To"] = to
+                msg["Subject"] = "TEST - Space Traders"
+                msg.attach(MIMEText(f"Username: {user}\nPassword: {pwd}", "plain"))
+                ctx = ssl.create_default_context()
+                with smtplib.SMTP("smtp.gmail.com", 587, timeout=15) as s:
+                    s.starttls(context=ctx)
+                    s.login(user_smtp, pwd_smtp)
+                    s.sendmail(user_smtp, to, msg.as_string())
+                return self.send_json(200, {
+                    "success": True,
+                    "message": "Email sent successfully"
+                })
+            except Exception as e:
+                logging.error(f"SMTP error: {e}")
+                return self.send_json(500, {
+                    "success": False,
+                    "error": str(e),
+                    "type": type(e).__name__
+                })
         self.send_json(404, {"error": "not found"})
 
 
