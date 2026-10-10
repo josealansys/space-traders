@@ -5,7 +5,7 @@ services:
     plan: free
     branch: main
     buildCommand: echo "No build needed - Python stdlib only"
-    startCommand: python tools/cloud_backend.py
+    startCommand: bash -c "cd tools && python cloud_backend.py"
     envVars:
       - key: SMTP_USER
         value: space.traders.bot@gmail.com
