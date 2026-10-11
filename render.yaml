@@ -5,19 +5,9 @@ services:
     plan: free
     branch: main
     buildCommand: echo "No build needed - Python stdlib only"
-    startCommand: bash -c "cd tools && python cloud_backend.py"
+    startCommand: python tools/cloud_storage.py
     envVars:
-      - key: SMTP_USER
-        value: space.traders.bot@gmail.com
-      - key: SMTP_PASSWORD
-        value: wotvsolapstmfeft
-      - key: SMTP_HOST
-        value: smtp.gmail.com
-      - key: SMTP_PORT
-        value: "587"
-      - key: FROM_NAME
-        value: Space Traders Bot
-      - key: FROM_EMAIL
-        value: space.traders.bot@gmail.com
+      - key: DATA_DIR
+        value: /opt/render/project/src/data
       - key: PORT
         generateValue: true
