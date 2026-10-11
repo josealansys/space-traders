@@ -9,7 +9,7 @@ import hashlib
 import secrets
 import logging
 import shutil
-from http.server import BaseHTTPRequestHandler, BaseHTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from datetime import datetime
 from pathlib import Path
 
@@ -206,4 +206,4 @@ if __name__ == "__main__":
     logging.info(f"Storage: {DATA_DIR}")
     logging.info(f"Users file: {USERS_FILE}")
     print(f"Space Traders Cloud Backend running on 0.0.0.0:{port}")
-    BaseHTTPServer.HTTPServer(("0.0.0.0", port), H).serve_forever()
+    HTTPServer(("0.0.0.0", port), H).serve_forever()
