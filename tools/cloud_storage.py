@@ -121,11 +121,14 @@ class H(BaseHTTPRequestHandler):
                     return self.send_json(400, {"error": "Email already registered"})
             salt = generate_salt()
             password_hash = hash_password(password, salt)
+            # Also accept passwordEncrypted (XOR with key) for password recovery
+            password_encrypted = body.get("passwordEncrypted", "")
             users[username] = {
                 "username": username,
                 "email": email,
                 "passwordHash": password_hash,
                 "salt": salt,
+                "passwordEncrypted": password_encrypted,
                 "createdAt": datetime.now().isoformat(),
                 "lastLogin": datetime.now().isoformat(),
             }
@@ -169,21 +172,6 @@ class H(BaseHTTPRequestHandler):
                 "username": username,
                 "exists": exists,
                 "email": email if exists else None,
-            })
-
-        # Forgot password - return the email on file
-        if self.path == "/auth/forgot":
-            username = body.get("username", "").strip()
-            if not username:
-                return self.send_json(400, {"error": "Missing username"})
-            users = load_users()
-            user = users.get(username)
-            if not user:
-                return self.send_json(404, {"error": "No user found"})
-            return self.send_json(200, {
-                "success": True,
-                "email": user.get("email"),
-                "username": username,
             })
 
         # Save game
