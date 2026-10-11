@@ -205,5 +205,5 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     logging.info(f"Storage: {DATA_DIR}")
     logging.info(f"Users file: {USERS_FILE}")
-    print(f"Space Traders Cloud Backend v3.2.7-STORAGE running on 0.0.0.0:{port}")
+    print(f"Space Traders Cloud Backend running on 0.0.0.0:{port}")
     BaseHTTPServer.HTTPServer(("0.0.0.0", port), H).serve_forever()
