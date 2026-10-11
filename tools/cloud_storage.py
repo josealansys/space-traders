@@ -171,6 +171,21 @@ class H(BaseHTTPRequestHandler):
                 "email": email if exists else None,
             })
 
+        # Forgot password - return the email on file
+        if self.path == "/auth/forgot":
+            username = body.get("username", "").strip()
+            if not username:
+                return self.send_json(400, {"error": "Missing username"})
+            users = load_users()
+            user = users.get(username)
+            if not user:
+                return self.send_json(404, {"error": "No user found"})
+            return self.send_json(200, {
+                "success": True,
+                "email": user.get("email"),
+                "username": username,
+            })
+
         # Save game
         if self.path.startswith("/save/"):
             player_id = self.path.split("/")[-1]
